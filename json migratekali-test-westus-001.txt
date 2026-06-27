@@ -1,0 +1,103 @@
+{
+    apiVersion 2025-04-01,
+    id subscriptions606239ff-e7f3-4b05-98db-2f21f15898bcresourceGroupsrg-migratekali-test-westus-001providersMicrosoft.ComputevirtualMachinesmigratekali-test-001,
+    name migratekali-test-001,
+    type microsoft.computevirtualmachines,
+    location centralindia,
+    plan {
+        name kali-2025-1d,
+        publisher kali-linux,
+        product kali
+    },
+    identity {
+        type SystemAssigned,
+        principalId afa9eaea-232d-4e5c-a0c7-15eedf4186b1,
+        tenantId 12651328-6f33-452d-ae19-e447bca8cd73
+    },
+    properties {
+        hardwareProfile {
+            vmSize Standard_D2s_v3
+        },
+        provisioningState Succeeded,
+        vmId 43c664d3-9585-4de5-9846-844cdb954ad0,
+        additionalCapabilities {
+            hibernationEnabled false
+        },
+        storageProfile {
+            imageReference {
+                publisher kali-linux,
+                offer kali,
+                sku kali-2025-1d,
+                version latest,
+                exactVersion 2025.1.4
+            },
+            osDisk {
+                osType Linux,
+                name migratekali-test-001_OsDisk_1_362706d253e54192ad154d7086edffde,
+                createOption FromImage,
+                caching ReadWrite,
+                managedDisk {
+                    id subscriptions606239ff-e7f3-4b05-98db-2f21f15898bcresourceGroupsrg-migratekali-test-westus-001providersMicrosoft.Computedisksmigratekali-test-001_OsDisk_1_362706d253e54192ad154d7086edffde
+                },
+                deleteOption Delete
+            },
+            dataDisks [],
+            diskControllerType SCSI
+        },
+        osProfile {
+            computerName migratekali-test-001,
+            linuxConfiguration {
+                disablePasswordAuthentication true,
+                ssh {
+                    publicKeys [
+                        {
+                            path homekalipstiang.sshauthorized_keys,
+                            keyData ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCz2w7s9Wr1nT0uEk46PyIGZmHOq4FgN+WUoea0Seaplq+74lUR3W4CP21xPJvoypiwix1vVAHf5HMF2nW263gOWBF6Fos+pGt32U5G3cbeCho9Kj3wprbLBPWxuLoSfohxh4lOMmZUld9jSvDqTDkV9zLbGTFe282Tt8eFmVuqFdSesy3nK+rSE5cfOoslkfeqA7qZc3So26bj2YGdVfL3gw+T1nSM2KNW6I3Pbd48aUeyPSwbHr2S351Tw0PM57TvdDBHk2G4iOK9uVLOu4RFWtzDe90vAt1h0XsRHwDQLgPp87yYzIBH4fEDKzXR7uWJAyexmQPAecNj1AvtkDzWLErUtkyZgA3g58EbBCA6UpMDuitsXe5ZXTwPGbijH7s5ZK5sxG5sfoEo+6XllxrBI9m3lw5ADkenMPEcMag4ZKt2ry+Y3fMBkpyOhNbx++N0I3g7XQW2CA5ACfmAz5SDu131mD64TPLaQ8gbsvBmi0+PxY0y7hSBB8U= generated-by-azure
+                        }
+                    ]
+                },
+                provisionVMAgent true,
+                patchSettings {
+                    patchMode ImageDefault,
+                    assessmentMode ImageDefault
+                }
+            },
+            secrets [],
+            allowExtensionOperations true,
+            requireGuestProvisionSignal true,
+            adminUsername kalipstiang
+        },
+        networkProfile {
+            networkInterfaces [
+                {
+                    id subscriptions606239ff-e7f3-4b05-98db-2f21f15898bcresourceGroupsrg-migratekali-test-westus-001providersMicrosoft.NetworknetworkInterfacesmigratekali-test-0017,
+                    properties {
+                        deleteOption Detach
+                    }
+                }
+            ]
+        },
+        diagnosticsProfile {
+            bootDiagnostics {
+                enabled true
+            }
+        },
+        timeCreated 2026-05-20T064141.5778367Z
+    },
+    resources [
+        {
+            name AADSSHLoginForLinux,
+            id subscriptions606239ff-e7f3-4b05-98db-2f21f15898bcresourceGroupsrg-migratekali-test-westus-001providersMicrosoft.ComputevirtualMachinesmigratekali-test-001extensionsAADSSHLoginForLinux,
+            type Microsoft.ComputevirtualMachinesextensions,
+            location centralindia,
+            properties {
+                autoUpgradeMinorVersion true,
+                provisioningState Failed,
+                publisher Microsoft.Azure.ActiveDirectory,
+                type AADSSHLoginForLinux,
+                typeHandlerVersion 1.0
+            }
+        }
+    ],
+    etag 5
+}
